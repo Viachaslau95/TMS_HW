@@ -16,6 +16,6 @@ with open(filename, 'w') as csvfile:
 
 
 # adding_text('students_info.csv')
-# del_text('students_info.csv')
+# del_text('students_info.csv', 1)
 # read_file('students_info.csv')
 
