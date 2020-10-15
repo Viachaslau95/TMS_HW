@@ -14,9 +14,9 @@ def adding_text(some_file: str):
         return my_file
 
 
-def del_text(some_file: str):
+def del_text(some_file: str, number_line: int):
     file = open(some_file).readlines()
-    del_3_arg = file.pop(3)
+    del_line = file.pop(number_line)
     with open(some_file, 'w') as File:
         File.writelines(file)
 
