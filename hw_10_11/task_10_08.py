@@ -3,10 +3,10 @@ from csv_utils import read_file, adding_text, del_text
 
 fields = ['Name of product', 'price', 'number', 'comments']
 rows = [
-    ['Tea', '3', '40', 'Nice tea'],
-    ['Coffee', '7', '23', 'Good coffee'],
-    ['Sweets', '5', '32', 'very sweet'],
-    ['Cookie', '6', '24', 'tasteless'],
+    ['Tea', 2.0, 40, 'Nice tea'],
+    ['Coffee', 7.5, 23, 'Good coffee'],
+    ['Sweets', 6.8, 32, 'very sweet'],
+    ['Cookie', 3.3, 100, 'tasteless'],
 ]
 filename = 'students_info.csv'
 with open(filename, 'w') as csvfile:
@@ -16,6 +16,5 @@ with open(filename, 'w') as csvfile:
 
 
 # adding_text('students_info.csv')
-# del_text('students_info.csv', 1)
-# read_file('students_info.csv')
-
+# del_text('students_info.csv', 3)
+# print(read_file('students_info.csv'))
