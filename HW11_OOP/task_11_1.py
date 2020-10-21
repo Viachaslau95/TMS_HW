@@ -8,8 +8,9 @@ class Computer:
     def not_in_stock(self):
         print(f'{self.__name}({self.__model}) not in stock!')
 
-    def sale(self):
-        print(self.price - 100)
+    def sale(self, sale: int):
+        self.price -= sale
+        return self.price
 
     @property
     def name(self):
@@ -46,8 +47,9 @@ class Bar:
     def closed(self):
         print(f'Bar {self.__name} closed!')
 
-    def up_check(self):
-        print(self.__average_check + 7)
+    def up_check(self, BYN: int):
+        self.__average_check += BYN
+        return self.__average_check
 
     @property
     def name(self):
@@ -83,8 +85,9 @@ class Hotel:
     def no_free_rooms(self):
         print(f'In Hotel {self.__name} no free rooms!')
 
-    def closed_some_room(self):
-        print(self.__number_of_rooms - 10)
+    def closed_some_room(self, rooms: int):
+        self.__number_of_rooms -= rooms
+        return self.__number_of_rooms
 
     @property
     def name(self):
@@ -182,15 +185,7 @@ class COVID19:
 
 
 comp = Computer(name='Lenovo', model=340, price=1900, weight=1800)
-comp.not_in_stock()
-comp.sale()
 bar = Bar(name='Lidbeer', number_of_seats=150, average_check=40, comment='nice bar')
-bar.closed()
-bar.up_check()
 hotel = Hotel(name='Radison', number_of_rooms=50, price=300)
-hotel.no_free_rooms()
-hotel.closed_some_room()
 cinema = Cinema(name='Silver Screen', number_of_halls=7, price=20, comment='Good Cinema')
-cinema.no_tickets()
-cinema.closed_hall()
 korona = COVID19(cases_of_illness=40.6, recovered=27.8, lethal_outcomes=1.12)
