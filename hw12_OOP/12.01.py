@@ -71,4 +71,3 @@ if __name__ == '__main__':
     print(mytime > mytime2)
     print(mytime <= mytime2)
     print(mytime >= mytime2)
-# test str
