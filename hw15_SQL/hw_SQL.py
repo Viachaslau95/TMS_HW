@@ -23,14 +23,21 @@ class SQLliteCRUD:
         print(results)
 
 
-    def updete(self):
+    def updete(self, id, first_name, last_name):
+        query = """ UPDATE user 
+                    SET first_name = first_name 
+                    
+        """
         pass
 
-    def delete(self, id):
-        delete = 'DELETE FROM user WHERE id='
-        return delete
+    def delete(self, name:str):
+        delete = "DELETE FROM user WHERE first_name = (name) VALUE(?)"
+        cursor = connection.cursor()
+        cursor.execute(delete, (name,))
+        connection.commit()
+        cursor.close()
+        connection.close()
 
-        pass
 
 
 CREATE_TABLE_QUERY = """CREATE TABLE user (
@@ -45,9 +52,9 @@ if __name__ == '__main__':
     connection = sqlite3.connect('my.db')
     sql_lite_obj = SQLliteCRUD(db_name='my.db')
     sql_lite_obj.get_connection()
-    sql_lite_obj.creat_person('K', 'B')
-    sql_lite_obj.read()
-    # sql_lite_obj.delete(1)
+    # sql_lite_obj.creat_person('K', 'B')
+    # sql_lite_obj.read()
+    sql_lite_obj.delete('M')
 
     cursor = connection.cursor()
 
